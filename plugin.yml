@@ -1,7 +1,7 @@
 name: TOFU1
 main: TOFU1\TOFU1
 version: 0.1
-api: [1.1.0]
+api: [1.15.0]
 load: POSTWORLD
 author: sanaehururu1200
 description: TOFUplugin
