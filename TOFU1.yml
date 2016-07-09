@@ -1,0 +1,11 @@
+---
+CONSOLEpos1: a:3:{s:1:"x";s:1:"1";s:1:"y";s:1:"1";s:1:"z";s:1:"1";}
+takeharupos1: a:3:{s:1:"x";s:1:"1";s:1:"y";s:1:"2";s:1:"z";s:1:"9";}
+CONSOLEpos2: a:3:{s:1:"x";s:1:"3";s:1:"y";s:1:"6";s:1:"z";s:1:"4";}
+CONSOLEpos1x: "6"
+CONSOLEpos1y: "1"
+CONSOLEpos1z: "1"
+CONSOLEpos2x: "3"
+CONSOLEpos2y: "1"
+CONSOLEpos2z: "1"
+...

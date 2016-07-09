@@ -6,3 +6,19 @@ load: POSTWORLD
 author: sanaehururu1200
 description: TOFUplugin
 website: https://github.com/sanaehururu1200/TOFU1
+commands:
+  z:
+    description: "WORLDEDIT:範囲内の全てのブロックをクリア(空気に)"
+    usage: "/z"
+  c:
+    description: "WORLDEDIT:座標データクリア"
+    usage: "/c"
+  b:
+    description: "WORLDEDIT:範囲内の全てのブロックを置き換え"
+    usage: "/b [ID]"	
+  p1:
+    description: "WORLDEDIT:POS1を設定"
+    usage: "/p1 [X] [Y] [Z]"	
+  p2:
+    description: "WORLDEDIT:POS2を設定"
+    usage: "/p2 [X] [Y] [Z]"	
