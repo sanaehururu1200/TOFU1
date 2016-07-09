@@ -15,6 +15,8 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
+use pocketmine\event\player\PlayerMoveEvent;
+use pocketmine\item\Item;
 
 
 class TOFU1 extends PluginBase implements Listener{
@@ -24,11 +26,6 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
 $this->getLogger()->info(TextFormat::GREEN . "TOFU1を読み込みました(製作者:はるる早苗)");
 $this->getLogger()->info(TextFormat::BLUE . "https://github.com/sanaehururu1200/TOFU1");
 $this->getLogger()->info(TextFormat::RED . "二次配布はしないでください。");
-//config
-if(!file_exists($this->getDataFolder())){//configを入れるフォルダが有るかチェック
-    mkdir($this->getDataFolder(), 0744, true);//なければフォルダを作成
-}
-$this->config = new Config($this->getDataFolder() . "TOFU1.yml", Config::YAML);
 }
 
 //参加時にconfig作成
@@ -46,7 +43,42 @@ $id = $item->getID();
 	$vector = new Vector3($block->x, $block->y, $block->z);
 	$level->setBlock($vector, $Air);
     }	 
+
 }
+
+public function onMove(PlayerMoveEvent $event){
+$player=$event->getPlayer();
+$level = $player->getLevel();
+$x=$player->x;
+$y=$player->y-1;
+$z=$player->z;
+$vec = new Vector3($x, $y, $z);
+$block = $level->getBlock($vec);
+if($block->getID()==133){
+$dir=$player->getDirectionVector();
+$player->setMotion($dir);
+}
+
+$Item = $player->getInventory()->getItemInHand();
+$id = $Item->getID();
+
+if($id==266){
+$dir=$player->getDirectionVector();
+$player->setMotion($dir);	
+}
+
+
+}
+}
+
+
+	
+
+
+
+
+
+
 
 
 //WORLDEDITの残骸
@@ -211,4 +243,3 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
 	return false;
 }
 */
-}
