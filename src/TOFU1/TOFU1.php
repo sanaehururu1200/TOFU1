@@ -17,6 +17,8 @@ use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\item\Item;
+use pocketmine\utils\Random;
+use pocketmine\level\particle\RedstoneParticle;
 
 
 class TOFU1 extends PluginBase implements Listener{
@@ -68,8 +70,33 @@ $player->setMotion($dir);
 }
 
 
+if($id==41){
+$dir=$player->getDirectionVector();
+$player->setMotion($dir);
 }
+
+if($block->getID()==165){
+$MotionJ = new Vector3(0,0,0);
+$jump = 1;
+$MotionJ->y = $jump;
+$player->setMotion($MotionJ);
 }
+
+if($block->getID()==42){
+$MotionA = new Vector3(0,0,0);
+$dir=$player->getDirection();
+$move = 3;
+if($dir === 0){$MotionA->x=$move;}
+if($dir === 1){$MotionA->z=$move;}
+if($dir === 2){$MotionA->x=-$move;}
+if($dir === 3){$MotionA->z=-$move;}
+$player->setMotion($MotionA);
+}
+
+
+
+}}
+
 
 
 	
